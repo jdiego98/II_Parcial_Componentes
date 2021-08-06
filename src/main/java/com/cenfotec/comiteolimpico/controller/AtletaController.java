@@ -62,17 +62,6 @@ public class AtletaController {
         return "buscar";
     }
 
-//    @RequestMapping(value = "/buscar",  method = RequestMethod.POST)
-//    public String buscarAction(String termino, BindingResult result, Model model) {
-//
-//        if(termino == null){
-//            model.addAttribute("atletas", this.atletaService.getAll());
-//        }else{
-//            model.addAttribute("atletas", this.atletaService.getByTermino(termino));
-//        }
-//        return "buscar";
-//    }
-
     @RequestMapping("/historicoImc")
     public String historico(Model model,
                             @RequestParam(value = "idAtleta", required = false) Long idAtleta) {

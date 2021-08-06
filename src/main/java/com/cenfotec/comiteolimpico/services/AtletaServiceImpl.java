@@ -55,7 +55,6 @@ public class AtletaServiceImpl implements AtletaService{
     public List<Atleta> getByTermino(String termino) {
 
         ArrayList<Atleta> atletas = new ArrayList<Atleta>();
-        String pal = "hola";
 
         for(Atleta at: atletaRepo.findAll()){
             if(at.getNombre().toLowerCase().startsWith(termino.toLowerCase()) == true){
