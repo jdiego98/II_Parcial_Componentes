@@ -8,9 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.text.DecimalFormat;
-import java.util.Date;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 public class AtletaServiceImpl implements AtletaService{
@@ -26,7 +24,6 @@ public class AtletaServiceImpl implements AtletaService{
 
         atletaRepo.save(atleta);
         imcService.save(this.calcularIMC(atleta));
-
     }
 
     @Override
@@ -57,6 +54,14 @@ public class AtletaServiceImpl implements AtletaService{
     @Override
     public List<Atleta> getByTermino(String termino) {
 
-        return  atletaRepo.findByNombreContaining(termino);
+        ArrayList<Atleta> atletas = new ArrayList<Atleta>();
+        String pal = "hola";
+
+        for(Atleta at: atletaRepo.findAll()){
+            if(at.getNombre().toLowerCase().startsWith(termino.toLowerCase()) == true){
+                atletas.add(at);
+            }
+        }
+        return  atletas;
     }
 }

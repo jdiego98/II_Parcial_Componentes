@@ -16,8 +16,8 @@
 <button><a th:href="@{/}">Regresar a Inicio</a></button>
 <h1>Buscar de Atletas</h1>
 <br>
-<form  th:action="@{/buscar}" th:object="${termino}"  method="post">
-    <input type="text" id="termino" name="Termino">
+<form  th:action="@{/buscar}" th:object="${parametro}"  method="post">
+    <input type="text" th:field="*{termino}" id="termino">
     <button type="submit">Buscar</button>
 </form>
 
