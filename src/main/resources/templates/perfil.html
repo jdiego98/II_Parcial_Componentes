@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8"></meta>
+  <meta http-equiv="Content-Type" content="text/html"></meta>
+  <title>Perfil Atleta</title>
+</head>
+<body>
+
+<button><a th:href="@{/}">Regresar a Inicio</a></button>
+
+<h1>Perfil:</h1>
+<form action="#" th:action="@{/perfil}" th:object="${atleta}" method="post">
+
+  <h2>Nombre</h2>
+  <h3 th:text="${atleta.nombre}"></h3>
+
+  <h2>Primer Apellido</h2>
+  <h3 th:text="${atleta.primerApellido}"></h3>
+
+  <h2>Segundo Apellido</h2>
+  <h3 th:text="${atleta.segundoApellido}"></h3>
+
+  <h2>Fecha de Nacimiento</h2>
+  <h3 th:text="${atleta.fechNacimiento}"></h3>
+
+  <h2>Deporte</h2>
+  <h3 th:text="${atleta.deporte}"></h3>
+
+  <h2>Estatura</h2>
+  <h3 th:text="${atleta.estatura}"></h3>
+
+  <h2>Peso </h2>
+  <h3 th:text="${atleta.peso}"></h3>
+
+
+  <h2>Categoria </h2>
+  <h3 th:text="${atleta.categoria}"></h3>
+
+
+  <a th:href="@{/historicoImc(idAtleta=${atleta.id})}">Historico de IMC</a>
+
+</form>
+
+</body>
+</html>
+</html>

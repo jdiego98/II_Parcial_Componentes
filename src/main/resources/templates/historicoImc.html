@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8"></meta>
+  <meta http-equiv="Content-Type" content="text/html"></meta>
+  <title>IMC</title>
+</head>
+<body>
+<button><a th:href="@{/}">Regresar a Inicio</a></button>
+<div>
+  <h1>Historico IMC</h1>
+  <ul th:each="entry : ${imcs}">
+    <div>
+      <li>
+        Fecha:
+        <span th:text="${entry.fechaCreacion}"></span>
+        <br>
+        IMC:
+        <span  th:text="${entry.imc}"></span>
+      </li>
+    </div>
+  </ul>
+</div>
+
+</body>
+</html>

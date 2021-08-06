@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8"></meta>
+  <meta http-equiv="Content-Type" content="text/html"></meta>
+  <title>Atletas</title>
+</head>
+<body>
+
+<button><a th:href="@{/}">Regresar a Inicio</a></button>
+
+<h2>Actualizacion de datos</h2>
+<br><br>
+
+<form action="#" th:action="@{/insertar}" th:object="${atleta}" method="post">
+
+  <input type="hidden" th:field="*{id}">
+  <input type="hidden" th:field="*{nombre}" id="name" readonly>
+  <input type="hidden" th:field="*{primerApellido}" id="primerApellido" readonly>
+  <input type="hidden" th:field="*{segundoApellido}" id="segundoApellido" readonly>
+  <input type="hidden" th:field="*{fechNacimiento}" id="fechaNacimiento" readonly>
+  <input type="hidden" th:field="*{deporte}" id="deporte" readonly>
+  <input type="hidden" step=".01" th:field="*{estatura}" id="estatura" readonly>
+  <input type="hidden" th:field="*{categoria}" id="categoria" readonly>
+
+  <label for="peso">Peso</label>
+  <input type="number" step=".01" th:field="*{peso}" id="peso">
+  <br><br>
+  <label for="direccion">Direccion</label>
+  <input type="text" th:field="*{direccion}" id="direccion" >
+  <br><br>
+  <label for="provincia">Provincia</label>
+  <input type="text" th:field="*{provincia}" id="provincia" >
+  <br><br>
+  <label for="canton">Canton</label>
+  <input type="text" th:field="*{canton}" id="canton">
+  <br><br>
+  <label for="distrito">Distrito</label>
+  <input type="text" th:field="*{distrito}" id="distrito">
+  <br><br>
+  <label for="telefono">Telefono</label>
+  <input type="text" th:field="*{telefono}" id="telefono">
+  <br><br>
+  <label for="email">Email</label>
+  <input type="text" th:field="*{email}" id="email">
+  <br><br>
+  <input type="submit" value="Editar">
+</form>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!doctype html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8"></meta>
+  <meta http-equiv="Content-Type" content="text/html"></meta>
+  <title>Buscar Atletas</title>
+</head>
+<body>
+<button><a th:href="@{/}">Regresar a Inicio</a></button>
+<h1>Buscar de Atletas</h1>
+<br>
+<form  th:action="@{/buscar}" th:object="${termino}"  method="post">
+    <input type="text" id="termino" name="Termino">
+    <button type="submit">Buscar</button>
+</form>
+
+<div>
+  <ul th:each="entry : ${atletas}">
+      <li >
+        <span th:text="${entry.nombre}"> Nombre</span>
+        <button><a th:href="@{/perfil(idAtleta=${entry.id})}" >Ver Detalle</a></button>
+        <button><a th:href="@{/editar(idAtleta=${entry.id})}" >Editar</a></button>
+      </li>
+  </ul>
+</div>
+
+</body>
+</html>
+</body>
+</html>
